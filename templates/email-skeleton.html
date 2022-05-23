@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+    <title>{% block title %}{% endblock %} | Widgets Manager</title>
+    {% endblock %}
+</head>
+<body class="body-styles">
+  <nav class="navigator">
+    <a class="nav-item" href="/">HOME</a>
+    <span class="nav-item disabled">
+      {{ widgetName }}
+    </span>
+    <span id="desktop-mode-trigger" class="nav-item" style="grid-column: 4 / 5;">
+      Desktop
+    </span>
+    <span id="mobile-mode-trigger" class="nav-item">
+      Mobile
+    </span>
+  </nav>
+
+  <table id="wrapper-table" width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+      <td>
+        <table id="content-table" width="600" align="center" cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td id="content-cell">
+
+              {% block content %}{% endblock %}
+
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  
+</body>
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</html>

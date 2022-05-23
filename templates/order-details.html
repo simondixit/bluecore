@@ -1,0 +1,189 @@
+{% extends "email-skeleton.html" %}
+{% block title %} Order Details {% endblock %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/widgets/order-details/desktop.css') }}" />
+    <link id="mobile-css" media="(max-width: 482px)" rel="stylesheet" href="{{ url_for('static', filename='css/widgets/order-details/mobile.css') }}" />
+{% endblock %}
+{% block content %}
+{# ORDER DETAILS #}
+
+<!-- Variables -->
+{% set ord_service_level = "Delivery" %}
+{% set ord_ddate = "Monday, October 10, 2019" %}
+{% set ord_dtime = "9:00am - 5:00pm EST" %}
+{% set ord_fully_unreservable = false %}
+<!-- end variables -->
+
+<!-- Widget -->
+<div id="order_details">
+
+    <!-- First column -->
+    <div class="left">
+
+        <!-- Gray box -->
+        <div class="gray-box" style="margin-bottom:8px">
+
+            <!-- Heading -->
+            <h4>
+                {% if ord_service_level == "Pickup" %}
+                pick up
+                {% else %}
+                delivery date & time
+                {% endif %}
+            </h4>
+            <!-- end heading -->
+
+            <!-- Content -->
+            <p>{{ord_ddate}} </p>
+            <p>{{ord_dtime}}</p>
+            <!-- end content -->
+
+            <!-- Link container -->
+            <div class="flex">
+    
+                <!-- Link -->
+                <a class="link"
+
+                href="
+                {% if ord_service_level == "Pickup" %}
+                https://calendar.google.com/calendar/r/eventedit?dates=={{ord_dtime_start}}%2F={{ord_dtime_end}}&text=={{ord_service_level}}+from+City+Furniture&location=={{dc_line1}}+={{dc_city}},+={{dc_state}}+={{dc_zip}}&details&sf=true
+                {% else %}
+                https://calendar.google.com/calendar/r/eventedit?dates=={{ord_dtime_start}}%2F={{ord_dtime_end}}&text=={{ord_service_level}}+from+City+Furniture&location=={{ord_shipto_line1}}+={{ord_shipto_line2}}+={{ord_shipto_city}},+={{ord_shipto_state}}+={{ord_shipto_zip}}&details&sf=true
+                {% endif %}
+                "
+
+                target="_blank">
+                    add to calendar
+                </a>
+                <!-- end link -->
+    
+            </div>
+            <!-- end wrapper -->
+
+        </div>
+        <!-- end gray box -->
+
+        <!-- Gray box -->
+        <div class="gray-box">
+
+            <!-- Heading -->
+            <h4>
+                {% if ord_service_level == "Pickup" %}
+                pickup location
+                {% else %}
+                delivery address
+                {% endif %}
+            </h4>
+            <!-- end heading -->
+
+            <!-- Content -->
+            <p>Jonathan Taylor Thomas</p>
+
+            <p>5555 NW 55 Street</p>
+
+            <p>Miami Beach, FL 33139</p>
+
+            <p>(954) 555-2424</p>
+            <!-- end content -->
+
+        </div>
+        <!-- end gray box -->
+
+    </div>
+    <!-- end column -->
+
+    <!-- Second column -->
+    <div class="right">
+
+        <!-- Gray box -->
+        <div class="gray-box">
+
+            <!-- Headings -->
+            <h4>delivery method</h4>
+            <h3>premium delivery</h3>
+            <h4>what to expect</h4>
+            <!-- end heading -->
+
+            <!-- List -->
+            <ul>
+                <li class="list-element checked">
+                    Arrives unassembled in original packagin
+                </li>
+                <li class="list-element checked"> Assembly is not included
+                </li>
+                <li class="list-element checked"> Packaging disposal is not included
+                </li>
+                <li class="list-element unchecked">First floor drop-off
+                </li>
+                <li class="list-element unchecked">
+                    Walk-up: First floor drop-off at bottom of stairs
+                </li>
+                <li class="list-element unchecked">
+                    Buildings: Inside lobby front door, loading dock or freight elevator
+                </li>
+                <li class="list-element unchecked">
+                    Homes: Inside front door
+                </li>
+                <li class="list-element unchecked">
+                    Signature required
+                </li>
+            </ul>
+            <!-- end list -->
+
+        </div>
+        <!-- end gray box -->
+
+    </div>
+    <!-- end column -->
+
+    <!-- Wrapper -->
+    <div class="button-container">
+        
+        <!-- Link -->
+        <a class="dark-button"
+
+        href="https://www.cityfurniture.co
+        /account/orders{% if
+        ord_autofill_login %}?alk={{
+        ord_autofill_login }}{% endif %}"
+
+        target="_blank">
+            {% if days_left_to_confirm == "0" %}
+            reschedule your delivery
+            {% else %}
+            confirm my delivery
+            {% endif %}
+        </a>
+        <!-- end link -->
+        
+    </div>
+    <!-- end wrapper -->
+
+    <!-- Wrapper -->
+    <div class="button-container" style="margin-top: 21px;">
+        
+        <!-- Link -->
+        <a class="light-button"
+
+        href="https://www.cityfurniture.co
+        /account/orders{% if
+        ord_autofill_login %}?alk={{
+        ord_autofill_login }}{% endif %}"
+
+        target="_blank">
+            {% if days_left_to_confirm == "0" %}
+            view order details
+            {% else %}
+            view or reschedule my order
+            {% endif %}
+        </a>
+        <!-- end link -->
+        
+    </div>
+    <!-- end wrapper -->
+
+</div>
+<!-- end widget -->
+
+{% endblock %}

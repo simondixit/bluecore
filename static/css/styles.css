@@ -1,0 +1,120 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.body-styles {
+  background-color: #04100E;
+}
+
+.navigator {
+  height: 15vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #42C9B3;
+  display: grid;
+  grid-template-columns: 10% auto 60% 10% 10%;
+  border: 1px solid #04100E;
+  z-index: 1;
+}
+
+.nav-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  background-color: #389989;
+  transition: all .3s;
+}
+
+.nav-item.disabled:hover {
+  background-color: #42C9B3;
+  cursor: auto;
+}
+
+.nav-item + .nav-item {
+  border-left: 1px solid #04100E;
+}
+
+#wrapper-table {
+  margin-top: 25vh;
+}
+
+#content-table {
+  margin: 0 auto;
+  position: relative;
+}
+
+#content-cell {
+  background-color: #f5f5f5;
+}
+
+#content-cell::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border: 15px dashed #42C9B3;
+  position: absolute;
+  top: -24px;
+  left: -24px;
+}
+
+.container {
+  position: relative;
+  padding: 3em 0 0;
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2em;
+  background-image: linear-gradient(to top, #04100e, #193934, #27655c, #349686, #42c9b3);
+}
+
+.main-title, .end {
+  color: whitesmoke;
+  text-align: center;
+  background: rgba(0, 0, 0, .4);
+  width: 75vw;
+  padding: 1em 0;
+  align-self: center;
+  border-radius: 4px;
+}
+
+.list-container {
+  width: 65vw;
+  align-self: center;
+  list-style: none;
+  font-size: 1.5em;
+  display: grid;
+  grid-template-columns: 100%;
+  text-align: center;
+  grid-gap: 1em;
+}
+
+.list-container li {
+  background: rgba(0, 0, 0, .2);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.list-container li:hover {
+  background: rgba(0, 0, 0, .5);
+  transition: all .5s;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: whitesmoke;
+  font-weight: 600;
+  padding: 1em 0;
+}

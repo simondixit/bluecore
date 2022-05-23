@@ -1,0 +1,5 @@
+INSTALL APP
+pip install -r requirements.txt
+
+RUN APP
+python main.py
