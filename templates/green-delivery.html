@@ -1,0 +1,32 @@
+{% extends "email-skeleton.html" %}
+{% set widgetName = "green delivery" %}
+{% block title %} {{widgetName.capitalize()}} {% endblock %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/widgets/green-delivery.css') }}" />
+    {# <link id="mobile-css" media="(max-width: 482px)" rel="stylesheet" href="{{ url_for('static', filename='css/widgets/folder/mobile.css') }}" /> #}
+{% endblock %}
+{% block content %}
+
+<!-- Variables -->
+{% set ord_type = "in-house" %}
+{% set ord_service_category = "Delivery" %}
+{% set ord_balance_due = "$0.00" %}
+<!-- end variables -->
+
+{% if ord_type == "in-house" or ord_type == "mixed" %}
+{% if ord_service_category == "Delivery" and ord_balance_due == "$0.00" %}
+
+<!-- Widget -->
+<div id="green_delivery">
+  <h4>green delivery</h4>
+  <p>
+    100% of our trucks use compressed natural gas as we drive towards a carbon neutral future.
+    <a href="https://www.cityfurniture.com/green-promise">Learn more about our 2040 Green Promise</a>
+  </p>
+</div>
+<!-- end widget -->
+
+{% endif %} {% endif %}
+
+{% endblock %}

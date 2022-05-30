@@ -1,6 +1,7 @@
 .section-title {
 	float: left;
 	width: auto;
+	color: #EAEAEA;
   text-transform: uppercase;
 }
 
@@ -13,6 +14,6 @@
 .divider {
 	width: 100%;
 	height: 1px;
-	background-color: #000;
+	background-color: #EAEAEA;
 	margin-top: 11px;
 }

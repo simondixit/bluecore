@@ -1,0 +1,44 @@
+{% extends "email-skeleton.html" %}
+{% set widgetName = "footer" %}
+{% block title %} {{widgetName.capitalize()}} {% endblock %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/widgets/footer.css') }}" />
+    {# <link id="mobile-css" media="(max-width: 482px)" rel="stylesheet" href="{{ url_for('static', filename='css/widgets/folder/mobile.css') }}" /> #}
+{% endblock %}
+{% block content %}
+
+<!-- Variables -->
+{% set something = "X" %}
+<!-- end variables -->
+
+<!-- Widget -->
+
+<div id="footer">
+  <div class="upper">
+    <a class="item" href="https://www.cityfurniture.com/help-center/">
+      <img src="https://storage.googleapis.com/img.triggermail.io/city_furniture/Screen_Shot_2021-07-12_at_9.34.51_AM.png" alt="(?) ICON">
+      <p>help center</p>
+    </a>
+    <a class="item" href="https://www.cityfurniture.com/browse/new-arrivals">
+      <img src="https://storage.googleapis.com/img.triggermail.io/city_furniture/Screen_Shot_2021-07-12_at_12.51.41_PM.png" alt="">
+      <p>shop new arrivals</p>
+    </a>
+    <a class="item" href="https://share.cityfurniture.com/transactional_emails">
+      <img src="https://storage.googleapis.com/img.triggermail.io/city_furniture/Screen_Shot_2021-07-12_at_12.51.49_PM.png" alt="">
+      <p>refer a friend</p>
+    </a>
+  </div>
+
+  
+  <div class="lower">
+    <a class="item" href="https://www.cityfurniture.com/help-center/return-policy">Return Policy</a>
+    <a class="item middle" href="https://www.cityfurniture.com/company/terms-of-use">Terms & Conditions</a>
+    <a class="item" href="https://www.cityfurniture.com/help-center/faq">FAQs</a>
+  </div>
+
+</div>
+
+<!-- end widget -->
+
+{% endblock %}

@@ -1,0 +1,12 @@
+#order_number_and_date {
+  display: flex;
+  color: #2B2B2B;
+}
+
+#order_number_and_date .number {
+  margin: 0 2rem 0 auto;
+}
+
+#order_number_and_date .date {
+  margin: 0 auto 0 0;
+}

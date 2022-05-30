@@ -1,0 +1,65 @@
+{% extends "email-skeleton.html" %}
+{% set widgetName = "return or damages" %}
+{% block title %} {{widgetName.capitalize()}} {% endblock %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/widgets/returns-or-damages.css') }}" />
+    <!-- <link id="mobile-css" media="(max-width: 482px)" rel="stylesheet" href="{{ url_for('static', filename='css/widgets/folder/mobile.css') }}" /> -->
+{% endblock %}
+{% block content %}
+
+<!-- Variables -->
+{% set something = "X" %}
+<!-- end variables -->
+
+<!-- Widget -->
+<div id="returns_or_damages">
+
+  <div>
+    <!-- Heading -->
+      <h3 class="section-title">
+        returns or damages
+      </h3>
+    <!-- end heading -->
+          
+    <!-- Divider -->
+      <div class="divider-container">
+          <div class="divider">
+              <!-- no content -->
+          </div>
+      </div>
+    <!-- end divider -->
+  </div>
+
+  <p>
+    Didn’t arrive in the way you expected? Shame on us, but we’re on it!
+    <a href="https://www.cityfurniture.com/account/orders{% if ord_autofill_login %}?alk={{ ord_autofill_login }}{% endif %}">
+       Submit a Claim 
+    </a>
+    within one (1) day after {% if ord_service_category == "Pickup" %} pickup, {% else %} delivery, {% endif %} along with clear photographs so we can get right to solving the problem. Minor damages can be easily fixed by our Certified Repair Technicians in the convenience of your own home.
+  </p>
+
+  <p>
+    {% if sales_name == "" or sales_email == "" %}
+    Didn’t love your order? You can receive a refund if you cancel your online purchase up to three (3) days after {% if ord_service_category == "Pickup" %} pickup. {% else %} delivery. {% endif %} Please note that orders canceled on or after{% if ord_service_category == "Pickup" %} pickup {% else %} delivery {% endif %} day are subject to a $99 restocking fee. View our full return policy below.
+
+    {% else %}
+    As your sales associate covered, in-store purchases do not qualify for returns or reselections. You can take a look at our policy in detail below.
+
+    {% endif %}
+  </p>
+
+  <div id="button">
+    
+    <!-- Link -->
+    <a target="_blank" href="https://www.cityfurniture.com/company/terms-of-use">
+      view full terms & conditions
+    </a>
+    <!-- end link -->
+        
+    </div>
+
+</div>
+<!-- end widget -->
+
+{% endblock %}

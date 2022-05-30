@@ -1,0 +1,21 @@
+{% extends "email-skeleton.html" %}
+{% set widgetName = "widget name" %}
+{% block title %} {{widgetName.capitalize()}} {% endblock %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/widgets/folder/desktop.css') }}" />
+    <link id="mobile-css" media="(max-width: 482px)" rel="stylesheet" href="{{ url_for('static', filename='css/widgets/folder/mobile.css') }}" />
+{% endblock %}
+{% block content %}
+
+<!-- Variables -->
+{% set something = "X" %}
+<!-- end variables -->
+
+<!-- Widget -->
+<div id="widget_name">
+    Hello world
+</div>
+<!-- end widget -->
+
+{% endblock %}

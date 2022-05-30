@@ -1,118 +1,138 @@
 #order_details * {
-  margin:0;
-  padding:0;
-  text-align:left;
-  box-sizing:border-box;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  box-sizing: border-box;
 }
 
 #order_details .left {
-  float:left;
-  width:auto;
-  color:#000;
+  float: left;
+  width: auto;
+  color: #000;
 }
 
 #order_details .right {
-  overflow:hidden;
-  padding-left:9px;
-  color:#181818;
+  overflow: hidden;
+  padding-left: 9px;
+  color: #181818;
+}
+
+#order_details .section-title {
+	float: left;
+	width: auto;
+  color: #181818;
+  text-transform: uppercase;
+}
+
+#order_details .divider-container {
+	margin-left: auto;
+	overflow: hidden;
+	padding-left: 31px;
+}
+
+#order_details .divider {
+	width: 100%;
+	height: 1px;
+	background-color: #EAEAEA;
+	margin-top: 11px;
 }
 
 #order_details .gray-box {
-padding:30px 22px;
-background-color:#F8F8F8;
+padding: 30px 22px;
+background-color: #F8F8F8;
 }
 
 #order_details h3,
 #order_details h4 {
-  text-transform:uppercase;
-  font-weight:700;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 #order_details h3 {
-  margin:0 0 20px;
-  color:#000;
-  font-size:18px;
-  line-height:22px;
-  letter-spacing:1.125px;
+  margin: 0 0 20px;
+  color: #000;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 1.125px;
 }
 
 #order_details h4 {
-  margin:0 0 8px;
-  color:#3A3A3A;
-  font-size:13px;
-  line-height:16px;
-  letter-spacing:0.346667px;
+  margin: 0 0 8px;
+  color: #3A3A3A;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 0.346667px;
 }
 
 #order_details p {
-  font-size:13px;
-  line-height:21px;
+  font-size: 13px;
+  line-height: 21px;
 }
 
 #order_details .flex {
-  margin-top:22px;
-  display:flex;
+  margin-top: 22px;
+  display: flex;
 }
 
 #order_details .link {
-  margin:0px auto;
-  padding:10px;
-  background-color:transparent;
-  display:inline-block;
-  color:#000;
-  border:1px solid #000;
-  font-size:12px;
-  font-weight:700;
-  line-height:15px;
-  letter-spacing:1.5px;
-  text-align: center;
-  text-decoration:none;
-  text-transform: uppercase;
+  margin: 0px auto;
+  padding: 10px;
+  background-color: transparent;
+  display: inline-block;
+  color: #000;
+  border: 1px solid #000;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 15px;
+  letter-spacing: 1.5px;
+  text-align:  center;
+  text-decoration: none;
+  text-transform:  uppercase;
 }
 
 #order_details .list-element {
-  font-size:13px;
-  padding-left:25px;
-  padding-top:5px;
-  margin:3.5px 0;
-  list-style:none;
+  font-size: 13px;
+  padding-left: 25px;
+  padding-top: 5px;
+  margin: 3.5px 0;
+  list-style: none;
 }
 
 #order_details .list-element.checked {
-  background:url('https://storage.googleapis.com/img.triggermail.io/city_furniture/Triggered-not-included.png') no-repeat 0px 3px;
+  background: url('https://storage.googleapis.com/img.triggermail.io/city_furniture/Triggered-not-included.png') no-repeat 0px 3px;
 }
 
 #order_details .list-element.unchecked {
-  background:url('https://storage.googleapis.com/img.triggermail.io/city_furniture/Triggered-included.png') no-repeat 0px 3px;
+  background: url('https://storage.googleapis.com/img.triggermail.io/city_furniture/Triggered-included.png') no-repeat 0px 3px;
 }
 
 #order_details .button-container {
-  margin-top: 25px;
-  display: flex;
+  margin-top:  25px;
+  display:  flex;
 }
 
 #order_details .dark-button,
 #order_details .light-button {
-  margin: 0px auto;
-  padding: 10px 24px;
-  display: inline-block;
-  min-width: 350.867px;
-  border: 1px solid #171717;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 20px;
-  letter-spacing: 1.25px;
-  text-align: center;
-  text-decoration: none;
-  text-transform:uppercase;
+  margin:  0px auto;
+  padding:  10px 24px;
+  display:  inline-block;
+  min-width:  350.867px;
+  border:  1px solid #171717;
+  font-size:  14px;
+  font-weight:  600;
+  line-height:  20px;
+  letter-spacing:  1.25px;
+  text-align:  center;
+  text-decoration:  none;
+  text-transform: uppercase;
 }
 
 #order_details .dark-button {
-  color: #fff;
-  background-color: #171717;
+  color:  #fff;
+  background-color:  #171717;
 }
 
 #order_details .light-button {
-  color: #171717;
-  background-color: transparent;
+  color:  #171717;
+  background-color:  transparent;
 }

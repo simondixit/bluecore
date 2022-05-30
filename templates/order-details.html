@@ -1,5 +1,6 @@
 {% extends "email-skeleton.html" %}
-{% block title %} Order Details {% endblock %}
+{% set widgetName = "order details" %}
+{% block title %} {{widgetName.capitalize()}} {% endblock %}
 {% block head %}
     {{ super() }}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/widgets/order-details/desktop.css') }}" />
@@ -17,6 +18,22 @@
 
 <!-- Widget -->
 <div id="order_details">
+
+    <div style="float:left;width:100%;">
+        <!-- Heading -->
+        <h3 class="section-title">
+            returns or damages
+        </h3>
+        <!-- end heading -->
+                
+        <!-- Divider -->
+        <div class="divider-container">
+            <div class="divider">
+                <!-- no content -->
+            </div>
+        </div>
+        <!-- end divider -->
+    </div>
 
     <!-- First column -->
     <div class="left">
@@ -78,7 +95,21 @@
             <!-- end heading -->
 
             <!-- Content -->
-            <p>Jonathan Taylor Thomas</p>
+            <p>
+                {% if ord_service_level == "Pickup" %}
+                {{dc_name}}
+                {% else %}
+                {{ord_shipto_line1}}
+                {% endif %}
+            </p>
+
+            <p>
+                {% if ord_service_level == "Pickup" %}
+                {{dc_line1}}
+                {% else %}
+                {{ord_shipto_line1}}
+                {% endif %}
+            </p>
 
             <p>5555 NW 55 Street</p>
 

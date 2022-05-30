@@ -1,0 +1,174 @@
+{% extends "email-skeleton.html" %}
+{% set widgetName = "del products standard" %}
+{% block title %} {{widgetName.capitalize()}} {% endblock %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/widgets/items-displayer.css') }}" />
+    <!-- <link id="mobile-css" media="(max-width: 482px)" rel="stylesheet" href="{{ url_for('static', filename='css/widgets/folder/mobile.css') }}" /> -->
+{% endblock %}
+{% block content %}
+
+<!-- Variables -->
+{%
+    set del_line = [
+        {
+            "name": "Bohan Black Leather Large Two-arm Sectional",
+            "sku": "9719367",
+            "qty": "1",
+            "price": "$4,199.95",
+            "total": "$4,199.95",
+            "imgUrl": "https://embed.widencdn.net/img/cityfurniture/rgn2yuacv6/650x440px/Z2109719367F00_KU_BOHAN_BLK_LR_L_2A_SEC.jpeg?keep=c&crop=0&u=m2xgp2",
+            "color": "BLACK",
+            "size": "N/A",
+            "in_home": false,
+            "in_home_term": "",
+            "stain": false,
+            "stain_term": "",
+            "item_status": "Unscheduled on Backorder",
+            "back_order": true,
+            "avail_date": "March 07, 2022"
+        },
+        {
+            "name": "Chelsea Light Beige Uph Platform Bed",
+            "sku": "9723551",
+            "qty": "1",
+            "price": "$1,099.95",
+            "total": "$1,099.95",
+            "imgUrl": "https://embed.widencdn.net/img/cityfurniture/60spouvrc3/650x440px/Z2109723551R01_MF_CHELSE_LBG_UP_PL_BD_K.jpeg?keep=c&crop=0&u=m2xgp2",
+            "color": "LT BEIGE",
+            "size": "King",
+            "in_home": false,
+            "in_home_term": "",
+            "stain": false,
+            "stain_term": "",
+            "item_status": "Unscheduled on Backorder",
+            "back_order": true,
+            "avail_date": "March 07, 2022"
+        },
+        {
+            "name": "Chelsea Light Gray Uph Platform Bed",
+            "sku": "9723554",
+            "qty": "1",
+            "price": "$799.95",
+            "total": "$799.95",
+            "imgUrl": "https://embed.widencdn.net/img/cityfurniture/yot7erve8q/650x440px/Z2109723554F00_MF_CHELSE_LGY_UP_PL_BD_Q.jpeg?keep=c&crop=0&u=m2xgp2",
+            "color": "LT GRAY",
+            "size": "Queen",
+            "in_home": false,
+            "in_home_term": "",
+            "stain": false,
+            "stain_term": "",
+            "item_status": "Unscheduled on Backorder",
+            "back_order": true,
+            "avail_date": "March 07, 2022"
+        },
+        {
+            "name": "Bohan Black Leather Large Two-arm Sectional",
+            "sku": "9719367",
+            "qty": "1",
+            "price": "$4,199.95",
+            "total": "$4,199.95",
+            "imgUrl": "https://embed.widencdn.net/img/cityfurniture/rgn2yuacv6/650x440px/Z2109719367F00_KU_BOHAN_BLK_LR_L_2A_SEC.jpeg?keep=c&crop=0&u=m2xgp2",
+            "color": "BLACK",
+            "size": "N/A",
+            "in_home": false,
+            "in_home_term": "",
+            "stain": false,
+            "stain_term": "",
+            "item_status": "Unscheduled on Backorder",
+            "back_order": true,
+            "avail_date": "March 07, 2022"
+        },
+        {
+            "name": "Chelsea Light Beige Uph Platform Bed",
+            "sku": "9723551",
+            "qty": "1",
+            "price": "$1,099.95",
+            "total": "$1,099.95",
+            "imgUrl": "https://embed.widencdn.net/img/cityfurniture/60spouvrc3/650x440px/Z2109723551R01_MF_CHELSE_LBG_UP_PL_BD_K.jpeg?keep=c&crop=0&u=m2xgp2",
+            "color": "LT BEIGE",
+            "size": "King",
+            "in_home": false,
+            "in_home_term": "",
+            "stain": false,
+            "stain_term": "",
+            "item_status": "Unscheduled on Backorder",
+            "back_order": true,
+            "avail_date": "March 07, 2022"
+        },
+        {
+            "name": "Chelsea Light Gray Uph Platform Bed",
+            "sku": "9723554",
+            "qty": "1",
+            "price": "$799.95",
+            "total": "$799.95",
+            "imgUrl": "https://embed.widencdn.net/img/cityfurniture/yot7erve8q/650x440px/Z2109723554F00_MF_CHELSE_LGY_UP_PL_BD_Q.jpeg?keep=c&crop=0&u=m2xgp2",
+            "color": "LT GRAY",
+            "size": "Queen",
+            "in_home": false,
+            "in_home_term": "",
+            "stain": false,
+            "stain_term": "",
+            "item_status": "Unscheduled on Backorder",
+            "back_order": true,
+            "avail_date": "March 07, 2022"
+        }
+    ]
+%}
+<!-- end variables -->
+
+<!-- Widget -->
+<div id="items-displayer">
+
+    <div style="float:left;width:100%;">
+        <!-- Heading -->
+        <h3 class="section-title">
+            items being delivered
+        </h3>
+        <!-- end heading -->
+                
+        <!-- Divider -->
+        <div class="divider-container">
+            <div class="divider">
+                <!-- no content -->
+            </div>
+        </div>
+        <!-- end divider -->
+    </div>
+
+    {% set counter = namespace(value=0) %}
+    <ul>
+        {% for item in del_line %}
+            {% if loop.index > 3 %}
+            {% set counter.value = counter.value + 1 %}
+            {% else %}
+            <li>
+                <img src="{{ item.imgUrl }}" alt="image item">
+                <span class="item-name">{{ item.name }}</span>
+                <span>{{ item.price }}</span>
+                <span>Qty: {{ item.qty }}</span>
+            </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+    <div class="button-container">
+        
+        <!-- Link -->
+        <a class="light-button"
+
+        href="https://www.cityfurniture.co
+        /account/orders{% if
+        ord_autofill_login %}?alk={{
+        ord_autofill_login }}{% endif %}"
+
+        target="_blank">
+            view order details
+        </a>
+        <!-- end link -->
+        
+    </div>
+</div>
+<!-- end widget -->
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "email-skeleton.html" %}
+{% set widgetName = "button" %}
+{% block title %} {{widgetName.capitalize()}} {% endblock %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/widgets/button.css') }}" />
+    <!-- <link id="mobile-css" media="(max-width: 482px)" rel="stylesheet" href="{{ url_for('static', filename='css/widgets/folder/mobile.css') }}" /> -->
+{% endblock %}
+{% block content %}
+
+<!-- Variables -->
+{% set days_left_to_confirm = "0" %}
+<!-- end variables -->
+
+<!-- Widget -->
+<div id="button">
+    
+  <!-- Link -->
+  <a
+  target="_blank"
+  href="https://www.cityfurniture.co
+  /account/orders{% if
+  ord_autofill_login %}?alk={{
+  ord_autofill_login }}{% endif %}"
+  >
+      {% if days_left_to_confirm == "0" %}
+      reschedule your delivery
+      {% else %}
+      confirm my delivery
+      {% endif %}
+  </a>
+  <!-- end link -->
+      
+</div>
+<!-- end widget -->
+
+{% endblock %}

@@ -1,0 +1,22 @@
+#green_delivery * {
+  margin: 0;
+  padding: 0 0 0 29px;
+  color: #181818;
+  font-size: 13px;
+  text-align: left;
+  line-height: 16px;
+  box-sizing: border-box;
+}
+
+#green_delivery > h4 {
+  margin-bottom: 8px;
+  background: url('https://storage.googleapis.com/img.triggermail.io/city_furniture/TriggeredGreenLeafpng.png') no-repeat left;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.85);
+  text-transform: uppercase;
+}
+
+#green_delivery a {
+  padding: 0;
+  text-decoration: underline;
+}
