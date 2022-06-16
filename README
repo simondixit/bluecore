@@ -1,13 +1,54 @@
-Bluecore Developer Mode
+# Bluecore Developer Mode
 
 This application simulates the Bluecore template & widgets builder environment.
 
+# How to use
 
-INSTALL APP
+1.  Find or Create the widget required for your template.
+2.  Copy the Widget section represented with following commented code:
+
+```html
+<!-- Widget -->
+
+// Your code
+
+<!-- end widget -->
+
+```
+
+1.  Go to corresponding template in Bluecore.
+2.  Paste the code inside the corresponding code block.
+3.  Save & Close
+
+## How to create a new widget
+
+1.  Create a new file inside templates folder.
+2.  Copy the source code of example.html file into the new one.
+3.  Have FUN.
+
+## How to handle css styles
+
+You can find a folder in static (/static/css) that contains all the styles, you probably want to update or create a css file related to a widget inside widgets folder.
+ 
+## How to index new widgets
+
+1.  Open up index.html file in your code editor.
+2.  Duplicate the elements involved in the link.
+3.  Have FUN.
+
+## How to run
+
+1.  Run python [main.py](http://main.py)
+2.  Go to [http://localhost:5000](http://localhost:5000)
+3.  Have FUN
+
+## How to install
+1.  Run the following commands:
+
+```html
 pip install virtualenv
 virtualenv venv
 source venv/bin/activate
 pip install -r requirements.txt
 
-RUN APP
-python main.py
+```
