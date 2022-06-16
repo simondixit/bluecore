@@ -2,7 +2,8 @@
 {% extends "email-skeleton.html" %}
 
 <!-- VARIABLES -->
-{% set widgetName = "green delivery" %}
+{% set widgetName = "title" %}
+{% set days_left_to_confirm = "0" %}
 
 <!-- WINDOW TITLE  -->
 {% block title %} {{widgetName.capitalize()}} {% endblock %}
@@ -10,7 +11,7 @@
 <!-- TEMPLATE HEAD  -->
 {% block head %}
     {{ super() }}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/widgets/green-delivery.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/widgets/title.css') }}" />
     <!-- <link id="mobile-css" media="(max-width: 482px)" rel="stylesheet" href="{{ url_for('static', filename='css/widgets/folder/mobile.css') }}" /> -->
 {% endblock %}
 
@@ -18,21 +19,20 @@
 {% block content %}
 
 <!-- FOR BLUECORE CODE BLOCK COPY BELOW THIS LINE UNTIL END OF TAG -->
-{# GREEN DELIVERY #}
+{# TITLE #}
 
 <!-- Widget -->
-{% if ord_type == "in-house" or ord_type == "mixed" %}
-{% if ord_service_category == "Delivery" and ord_balance_due == "$0.00" %}
 
-<div id="green_delivery">
-  <h4>green delivery</h4>
-  <p>
-    100% of our trucks use compressed natural gas as we drive towards a carbon neutral future.
-    <a href="https://www.cityfurniture.com/green-promise">Learn more about our 2040 Green Promise</a>
-  </p>
-</div>
+<h1 id="title">
+  {% if days_prior == "0" %}
+  delivery canceled
+  {% elif days_prior == "1" %}
+  confirm your delivery
+  {% else %}
+  please confirm your delivery
+  {% endif %}
+</h1>
 
-{% endif %}{% endif %}
 <!-- end widget -->
 
 {% endblock %}

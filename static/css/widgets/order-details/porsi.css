@@ -1,19 +1,38 @@
 #order_details {
   margin-bottom: 50px;
+  float: left;
 }
 
 #order_details .left {
   float: left;
   width: auto;
   color: #000;
-  text-align: left;
 }
 
 #order_details .right {
   overflow: hidden;
   padding-left: 9px;
   color: #181818;
-  text-align: left;
+}
+
+#order_details .section-title {
+	float: left;
+	width: auto;
+  color: #181818;
+  text-transform: uppercase;
+}
+
+#order_details .divider-container {
+	margin-left: auto;
+	overflow: hidden;
+	padding-left: 31px;
+}
+
+#order_details .divider {
+	width: 100%;
+	height: 1px;
+	background-color: #EAEAEA;
+	margin-top: 11px;
 }
 
 #order_details .gray-box {

@@ -1,0 +1,34 @@
+#callout {
+  padding: 16px;
+  background-color:#F9F9FA;
+}
+
+#callout .required {
+  display: block;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.75px;
+  text-align: left;
+  text-transform: uppercase;
+  color: #CE202F;
+}
+
+#callout h6 {
+  margin: 8px 0;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  text-align: left;
+  color: #171717;
+}
+
+#callout p {
+  margin: 0;
+  text-align: left;
+  font-size: 14px;
+  line-height: 24px;
+  color: #171717;
+}

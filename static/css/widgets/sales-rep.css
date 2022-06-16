@@ -1,0 +1,46 @@
+#sales_rep img {
+  float: left;
+  width: 50px;
+  height: 50px;
+}
+
+#sales_rep .wrapper {
+  float: left;
+  width: calc(100% - 68px);
+  margin-left: 18px;
+}
+
+#sales_rep .title {
+  margin: 0;
+  text-align: left;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 0.346667px;
+  text-transform: uppercase;
+  color: #3A3A3A;
+}
+
+#sales_rep .content {
+  margin: 3px 0 0;
+  text-align: left;
+  font-size: 14px;
+  line-height: 21px;
+  color: #181818;
+}
+
+#sales_rep .contact {
+  margin: 8px 0 0;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  text-decoration-line: underline;
+  color: #2035E0;
+}
+
+#sales_rep .contact span {
+  font-size: 13px;
+  margin-left: 24px;
+}
+

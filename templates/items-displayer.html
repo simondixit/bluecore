@@ -1,146 +1,87 @@
+<!-- [REQUIRED] IMPORT HTML FROM BASE HTML FILE -->
 {% extends "email-skeleton.html" %}
-{% set widgetName = "del products standard" %}
+
+<!-- VARIABLES -->
+{% set widgetName = "items displayer" %}
+{%
+    set del_line = [
+        {
+            "name": "Bohan Black Leather Large Two-arm Sectional",
+            "qty": "1",
+            "price": "$4,199.95",
+            "imgUrl": "https://embed.widencdn.net/img/cityfurniture/rgn2yuacv6/650x440px/Z2109719367F00_KU_BOHAN_BLK_LR_L_2A_SEC.jpeg?keep=c&crop=0&u=m2xgp2",
+            "avail_date": "March 07, 2022",
+            "children": []
+        },
+        {
+            "name": "Chelsea Light Beige Uph Platform Bed",
+            "qty": "1",
+            "price": "$1,099.95",
+            "imgUrl": "https://embed.widencdn.net/img/cityfurniture/60spouvrc3/650x440px/Z2109723551R01_MF_CHELSE_LBG_UP_PL_BD_K.jpeg?keep=c&crop=0&u=m2xgp2",
+            "avail_date": "March 07, 2022",
+            "children": []
+        },
+        {
+            "name": "Chelsea Light Gray Uph Platform Bed",
+            "qty": "1",
+            "price": "$799.95",
+            "imgUrl": "https://embed.widencdn.net/img/cityfurniture/yot7erve8q/650x440px/Z2109723554F00_MF_CHELSE_LGY_UP_PL_BD_Q.jpeg?keep=c&crop=0&u=m2xgp2",
+            "avail_date": "March 07, 2022",
+            "children": []
+        },
+    ]
+%}
+
+<!-- WINDOW TITLE  -->
 {% block title %} {{widgetName.capitalize()}} {% endblock %}
+
+<!-- TEMPLATE HEAD  -->
 {% block head %}
     {{ super() }}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/widgets/items-displayer.css') }}" />
     <!-- <link id="mobile-css" media="(max-width: 482px)" rel="stylesheet" href="{{ url_for('static', filename='css/widgets/folder/mobile.css') }}" /> -->
 {% endblock %}
+
+<!-- TEMPLATE BODY  -->
 {% block content %}
 
-<!-- Variables -->
-{%
-    set del_line = [
-        {
-            "name": "Bohan Black Leather Large Two-arm Sectional",
-            "sku": "9719367",
-            "qty": "1",
-            "price": "$4,199.95",
-            "total": "$4,199.95",
-            "imgUrl": "https://embed.widencdn.net/img/cityfurniture/rgn2yuacv6/650x440px/Z2109719367F00_KU_BOHAN_BLK_LR_L_2A_SEC.jpeg?keep=c&crop=0&u=m2xgp2",
-            "color": "BLACK",
-            "size": "N/A",
-            "in_home": false,
-            "in_home_term": "",
-            "stain": false,
-            "stain_term": "",
-            "item_status": "Unscheduled on Backorder",
-            "back_order": true,
-            "avail_date": "March 07, 2022"
-        },
-        {
-            "name": "Chelsea Light Beige Uph Platform Bed",
-            "sku": "9723551",
-            "qty": "1",
-            "price": "$1,099.95",
-            "total": "$1,099.95",
-            "imgUrl": "https://embed.widencdn.net/img/cityfurniture/60spouvrc3/650x440px/Z2109723551R01_MF_CHELSE_LBG_UP_PL_BD_K.jpeg?keep=c&crop=0&u=m2xgp2",
-            "color": "LT BEIGE",
-            "size": "King",
-            "in_home": false,
-            "in_home_term": "",
-            "stain": false,
-            "stain_term": "",
-            "item_status": "Unscheduled on Backorder",
-            "back_order": true,
-            "avail_date": "March 07, 2022"
-        },
-        {
-            "name": "Chelsea Light Gray Uph Platform Bed",
-            "sku": "9723554",
-            "qty": "1",
-            "price": "$799.95",
-            "total": "$799.95",
-            "imgUrl": "https://embed.widencdn.net/img/cityfurniture/yot7erve8q/650x440px/Z2109723554F00_MF_CHELSE_LGY_UP_PL_BD_Q.jpeg?keep=c&crop=0&u=m2xgp2",
-            "color": "LT GRAY",
-            "size": "Queen",
-            "in_home": false,
-            "in_home_term": "",
-            "stain": false,
-            "stain_term": "",
-            "item_status": "Unscheduled on Backorder",
-            "back_order": true,
-            "avail_date": "March 07, 2022"
-        },
-        {
-            "name": "Bohan Black Leather Large Two-arm Sectional",
-            "sku": "9719367",
-            "qty": "1",
-            "price": "$4,199.95",
-            "total": "$4,199.95",
-            "imgUrl": "https://embed.widencdn.net/img/cityfurniture/rgn2yuacv6/650x440px/Z2109719367F00_KU_BOHAN_BLK_LR_L_2A_SEC.jpeg?keep=c&crop=0&u=m2xgp2",
-            "color": "BLACK",
-            "size": "N/A",
-            "in_home": false,
-            "in_home_term": "",
-            "stain": false,
-            "stain_term": "",
-            "item_status": "Unscheduled on Backorder",
-            "back_order": true,
-            "avail_date": "March 07, 2022"
-        },
-        {
-            "name": "Chelsea Light Beige Uph Platform Bed",
-            "sku": "9723551",
-            "qty": "1",
-            "price": "$1,099.95",
-            "total": "$1,099.95",
-            "imgUrl": "https://embed.widencdn.net/img/cityfurniture/60spouvrc3/650x440px/Z2109723551R01_MF_CHELSE_LBG_UP_PL_BD_K.jpeg?keep=c&crop=0&u=m2xgp2",
-            "color": "LT BEIGE",
-            "size": "King",
-            "in_home": false,
-            "in_home_term": "",
-            "stain": false,
-            "stain_term": "",
-            "item_status": "Unscheduled on Backorder",
-            "back_order": true,
-            "avail_date": "March 07, 2022"
-        },
-        {
-            "name": "Chelsea Light Gray Uph Platform Bed",
-            "sku": "9723554",
-            "qty": "1",
-            "price": "$799.95",
-            "total": "$799.95",
-            "imgUrl": "https://embed.widencdn.net/img/cityfurniture/yot7erve8q/650x440px/Z2109723554F00_MF_CHELSE_LGY_UP_PL_BD_Q.jpeg?keep=c&crop=0&u=m2xgp2",
-            "color": "LT GRAY",
-            "size": "Queen",
-            "in_home": false,
-            "in_home_term": "",
-            "stain": false,
-            "stain_term": "",
-            "item_status": "Unscheduled on Backorder",
-            "back_order": true,
-            "avail_date": "March 07, 2022"
-        }
-    ]
-%}
-<!-- end variables -->
+<!-- FOR BLUECORE CODE BLOCK COPY BELOW THIS LINE UNTIL END OF TAG -->
+{# ITEMS DISPLAYER #}
 
 <!-- Widget -->
-<div id="items-displayer">
 
-    <div style="float:left;width:100%;">
-        <!-- Heading -->
-        <h3 class="section-title">
+{% if del_line|length() > 0 %}
+
+<div id="items-displayer">
+    <!-- Divider -->
+    <div id="divider">
+        <h2>
             items being delivered
-        </h3>
-        <!-- end heading -->
-                
-        <!-- Divider -->
+        </h2>
+        
         <div class="divider-container">
             <div class="divider">
-                <!-- no content -->
+                <!-- Empty -->
             </div>
         </div>
-        <!-- end divider -->
     </div>
+    <!-- end divider -->
 
-    {% set counter = namespace(value=0) %}
+    <!-- Subtitle  -->
+    <!-- <h4 class="subtitle">
+        ready to schedule
+    </h4> -->
+    <!-- end subtitle -->
+
+    <!-- List  -->
     <ul>
         {% for item in del_line %}
             {% if loop.index > 3 %}
-            {% set counter.value = counter.value + 1 %}
+            {% elif loop.index > 2 and del_line|length - 3 > 0 %}
+            <li class="remaining">
+                <span>+</span>
+                <p>{{ del_line|length - 3 }} Items</p>
+            </li>
             {% else %}
             <li>
                 <img src="{{ item.imgUrl }}" alt="image item">
@@ -151,24 +92,25 @@
             {% endif %}
         {% endfor %}
     </ul>
+    <!-- end list -->
 
-    <div class="button-container">
-        
-        <!-- Link -->
-        <a class="light-button"
-
-        href="https://www.cityfurniture.co
-        /account/orders{% if
-        ord_autofill_login %}?alk={{
-        ord_autofill_login }}{% endif %}"
-
-        target="_blank">
-            view order details
+    <!-- Button  -->
+    <div id="button">
+        <a
+          class="light"
+          target="_blank"
+          href="https://www.cityfurniture.co
+          /account/orders{% if
+          ord_autofill_login %}?alk={{
+          ord_autofill_login }}{% endif %}"
+        >
+          view order details
         </a>
-        <!-- end link -->
-        
-    </div>
+      </div>
+    <!-- end button -->
 </div>
+
+{% endif %}
 <!-- end widget -->
 
 {% endblock %}

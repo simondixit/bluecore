@@ -18,3 +18,8 @@
   text-decoration: none;
   text-transform: uppercase;
 }
+
+#button a.light {
+  background-color: #F2F2F2;
+  color: #171717;
+}

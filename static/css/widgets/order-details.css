@@ -1,5 +1,9 @@
-#order_details {
-  margin-bottom: 50px;
+@import url('./divider.css');
+@import url('./button.css');
+
+#order_details .wrapper {
+  float: left;
+  width: 100%;
 }
 
 #order_details .left {
@@ -44,6 +48,7 @@ background-color: #F8F8F8;
 }
 
 #order_details p {
+  margin: 0;
   font-size: 13px;
   line-height: 21px;
 }
@@ -70,7 +75,7 @@ background-color: #F8F8F8;
   text-transform:  uppercase;
 }
 
-#order_details .list-container {
+#order_details ul {
   padding: 0;
 }
 
@@ -88,37 +93,4 @@ background-color: #F8F8F8;
 
 #order_details .list-element.unchecked {
   background: url('https://storage.googleapis.com/img.triggermail.io/city_furniture/Triggered-not-included.png') no-repeat 0px 3px;
-}
-
-#order_details .button-container {
-  margin-top:  25px;
-  display:  flex;
-  width: 100%;
-  float: left;
-}
-
-#order_details .dark-button,
-#order_details .light-button {
-  margin:  0px auto;
-  padding:  10px 24px;
-  display:  inline-block;
-  min-width:  350.867px;
-  border:  1px solid #171717;
-  font-size:  14px;
-  font-weight:  600;
-  line-height:  20px;
-  letter-spacing:  1.25px;
-  text-align:  center;
-  text-decoration:  none;
-  text-transform: uppercase;
-}
-
-#order_details .dark-button {
-  color:  #fff;
-  background-color:  #171717;
-}
-
-#order_details .light-button {
-  color:  #171717;
-  background-color:  transparent;
 }

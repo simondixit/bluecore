@@ -1,23 +1,33 @@
+<!-- [REQUIRED] IMPORT HTML FROM BASE HTML FILE -->
 {% extends "email-skeleton.html" %}
+
+<!-- VARIABLES -->
 {% set widgetName = "order number and date" %}
+{% set ord_number = "767659" %}
+{% set invoice_date = "Mar 03, 2022" %}
+
+<!-- WINDOW TITLE  -->
 {% block title %} {{widgetName.capitalize()}} {% endblock %}
+
+<!-- TEMPLATE HEAD  -->
 {% block head %}
     {{ super() }}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/widgets/order-number-and-date.css') }}" />
-    <!-- <link id="mobile-css" media="(max-width: 482px)" rel="stylesheet" href="{{ url_for('static', filename='css/widgets/folder/mobile.css') }}" /> -->
 {% endblock %}
+
+<!-- TEMPLATE BODY  -->
 {% block content %}
 
-<!-- Variables -->
-{% set ord_number = "767659" %}
-{% set invoice_date = "Mar 03, 2022" %}
-<!-- end variables -->
+<!-- FOR BLUECORE CODE BLOCK COPY BELOW THIS LINE UNTIL END OF TAG -->
+{# ORDER NUMBER & ORDER DATE #}
 
 <!-- Widget -->
+
 <div id="order_number_and_date">
   <p class="number">Order Number <b>{{ord_number}}</b></p>
   <p class="date">Order Date <b>{{invoice_date}}</b></p>  
 </div>
+
 <!-- end widget -->
 
 {% endblock %}

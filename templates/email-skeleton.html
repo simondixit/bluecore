@@ -2,7 +2,12 @@
 <html lang="en">
 <head>
     {% block head %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bluecore-reset.css') }}" />
+    <link id="mobile-css" rel="stylesheet" media="(max-width: 482px)" href="{{ url_for('static', filename='css/bluecore-reset-mobile.css') }}" />
     <title>{% block title %}{% endblock %} | Widgets Manager</title>
     {% endblock %}
 </head>

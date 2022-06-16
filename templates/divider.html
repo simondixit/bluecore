@@ -2,7 +2,7 @@
 {% extends "email-skeleton.html" %}
 
 <!-- VARIABLES -->
-{% set widgetName = "green delivery" %}
+{% set widgetName = "divider" %}
 
 <!-- WINDOW TITLE  -->
 {% block title %} {{widgetName.capitalize()}} {% endblock %}
@@ -10,7 +10,7 @@
 <!-- TEMPLATE HEAD  -->
 {% block head %}
     {{ super() }}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/widgets/green-delivery.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/widgets/divider.css') }}" />
     <!-- <link id="mobile-css" media="(max-width: 482px)" rel="stylesheet" href="{{ url_for('static', filename='css/widgets/folder/mobile.css') }}" /> -->
 {% endblock %}
 
@@ -18,21 +18,22 @@
 {% block content %}
 
 <!-- FOR BLUECORE CODE BLOCK COPY BELOW THIS LINE UNTIL END OF TAG -->
-{# GREEN DELIVERY #}
+{# DIVIDER #}
 
 <!-- Widget -->
-{% if ord_type == "in-house" or ord_type == "mixed" %}
-{% if ord_service_category == "Delivery" and ord_balance_due == "$0.00" %}
 
-<div id="green_delivery">
-  <h4>green delivery</h4>
-  <p>
-    100% of our trucks use compressed natural gas as we drive towards a carbon neutral future.
-    <a href="https://www.cityfurniture.com/green-promise">Learn more about our 2040 Green Promise</a>
-  </p>
+<div id="divider">
+    <h2>
+        items being delivered
+    </h2>
+    
+    <div class="divider-container">
+        <div class="divider">
+            <!-- Empty -->
+        </div>
+    </div>
 </div>
 
-{% endif %}{% endif %}
 <!-- end widget -->
 
 {% endblock %}

@@ -1,0 +1,95 @@
+<!-- [REQUIRED] IMPORT HTML FROM BASE HTML FILE -->
+{% extends "email-skeleton.html" %}
+
+<!-- VARIABLES -->
+{% set widgetName = "message" %}
+{% set ord_ddate = "Monday, October 10, 2019" %}
+
+<!-- WINDOW TITLE  -->
+{% block title %} {{widgetName.capitalize()}} {% endblock %}
+
+<!-- TEMPLATE HEAD  -->
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/widgets/message.css') }}" />
+    <!-- <link id="mobile-css" media="(max-width: 482px)" rel="stylesheet" href="{{ url_for('static', filename='css/widgets/folder/mobile.css') }}" /> -->
+{% endblock %}
+
+<!-- TEMPLATE BODY  -->
+{% block content %}
+
+<!-- FOR BLUECORE CODE BLOCK COPY BELOW THIS LINE UNTIL END OF TAG -->
+{# MESSAGE #}
+
+<!-- Widget -->
+
+<div id="message">
+  <p class="greeting">
+    Hello {{ cust_fname }},
+  </p>
+  
+  {% if days_left_to_confirm == "0" %}
+  
+  <p>
+    We’ve made several attempts to reach you
+    to confirm your upcoming delivery
+    appointment for {{ ord_ddate }}.
+    Unfortunately, we did not receive
+    your confirmation so your delivery
+    appointment was canceled. Please
+    reschedule your delivery as soon as
+    possible to avoid potential stock and
+    delivery delays by clicking the
+    reschedule button below.
+  </p>
+  
+  {% elif days_left_to_confirm == "1" %}
+  <p>
+    We’ve made several attempts to reach you
+    to confirm your upcoming delivery
+    appointment for {{ ord_ddate }}. 
+    <a href="#">click here</a> to confirm
+    you’ll be available to accept your
+    delivery. If we don’t hear from you by
+    12:00pm today your delivery appointment
+    will automatically be canceled and
+    you’ll need to reschedule for a later
+    date.
+  </p>
+  
+  {% else %}
+  <p>
+    While your order is tentatively
+    scheduled for {{ord_ddate.split(',')[0]}},
+    {{ord_ddate.split(',')[1]}}, you
+    still need to confirm you'll be
+    available to accept your delivery by
+    <a href="#">clicking here</a>. If we
+    don't hear from you by {{
+    confirm_before_date }} before noon your
+    delivery appointment will automatically be
+    canceled and you’ll need to reschedule for
+    a later date.
+  </p>
+  
+  <p class="text new-line">
+    Once you’ve confirmed, we’ll reach out
+    again by 8:00pm the night before your
+    delivery to provide an estimated 3-hour
+    window of arrival.
+  </p>
+  
+  <p class="text new-line">
+    If you need to make any additional 
+    changes or reschedule your delivery be
+    sure to make the updates at least one
+    day prior to your delivery date to avoid
+    a $99.99 restocking fee.
+  </p>
+  
+  {% endif %}
+</div>
+
+<!-- end widget -->
+
+{% endblock %}

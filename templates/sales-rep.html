@@ -1,0 +1,40 @@
+<!-- [REQUIRED] IMPORT HTML FROM BASE HTML FILE -->
+{% extends "email-skeleton.html" %}
+
+<!-- VARIABLES -->
+{% set widgetName = "sales representant" %}
+{% set sales_name = "Eduardo Muñoz" %}
+{% set sales_phone = "+59632547895" %}
+{% set sales_email = "ed_muñoz@gmail.com" %}
+
+<!-- WINDOW TITLE  -->
+{% block title %} {{widgetName.capitalize()}} {% endblock %}
+
+<!-- TEMPLATE HEAD  -->
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/widgets/sales-rep.css') }}" />
+    <!-- <link id="mobile-css" media="(max-width: 482px)" rel="stylesheet" href="{{ url_for('static', filename='css/widgets/folder/mobile.css') }}" /> -->
+{% endblock %}
+
+<!-- TEMPLATE BODY  -->
+{% block content %}
+
+<!-- FOR BLUECORE CODE BLOCK COPY BELOW THIS LINE UNTIL END OF TAG -->
+{# SALES REPRESENTANT #}
+
+<!-- Widget -->
+
+<div id="sales_rep">
+    <img src="https://storage.googleapis.com/img.triggermail.io/city_furniture/profileImagePlaceholder.png" alt="profile icon">
+    <div class="wrapper">
+        <p class="title">A NOTE FROM {{ sales_name.upper() }}</p>
+        <p class="content">Hi there. I’m here to help so feel free to reach out to me with any questions.</p>
+        <p class="contact mobile-hide">{{ sales_phone }} <span>{{ sales_email }}</span></p>
+        <p class="contact desktop-hide">{{ sales_phone }} <span style="display:block;margin:8px 0 0;">{{ sales_email }}</span></p>
+    </div>
+</div>
+
+<!-- end widget -->
+
+{% endblock %}

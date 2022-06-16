@@ -1,0 +1,57 @@
+/* ========== end custom styles ========== */
+
+#content-cell { padding: 0 20px; } /* adds some padding to the side of entire template for mobile devices */
+
+#content-cell div,
+#content-cell p,
+#content-cell a,
+#content-cell li,
+#content-cell span,
+#content-cell td { -webkit-text-size-adjust:none; }
+
+/* ========== utilities ========== */
+
+/* makes images responsive inside columns on mobile devices */
+
+#content-cell .flex-image {
+    width: 100% !important;
+    height: auto;
+}
+
+#content-cell .flex-button {
+    max-width:600px !important;
+    width:100% !important;
+}
+
+#content-cell .flex-button a {
+    display: block !important;
+    font-size: 18px !important;
+}
+
+#content-cell .mobile-hide { display: none !important; }
+
+#content-cell .desktop-hide {
+  display: table !important;
+  max-height: none !important;
+  overflow: visible !important;
+  float: none !important;
+  font-size: 12px !important;
+  line-height: 1.5 !important;
+}
+
+  #content-cell .desktop-hide td,
+  #content-cell td.desktop-hide {
+    display: inline-table !important;
+  }
+
+  #content-cell .desktop-hide img,
+  #content-cell img.desktop-hide {
+    max-height: none !important;
+    width: auto !important;
+  }
+
+  #content-cell .desktop-hide .flex-image {
+    width: 100% !important;
+  }
+
+  /* ========== end utilities ========== */
