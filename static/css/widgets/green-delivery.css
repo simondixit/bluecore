@@ -17,6 +17,10 @@
   letter-spacing: 0.346667px;
 }
 
+#green_delivery p {
+  padding: 0 0 0 29px;
+}
+
 #green_delivery a {
   padding: 0;
   text-decoration: underline;
