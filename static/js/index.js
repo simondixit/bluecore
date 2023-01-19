@@ -9,8 +9,8 @@ mobileTrigger.onclick = () => toggleMode("mobile")
 
 function toggleMode(mode) {
   if(currentMode == mode) return;
-
-  layout.style.width = mode == "desktop" ? "600px" : "482.7px"
+  
+  layout.style.width = mode == "desktop" ? "600px" : "360px"
   currentMode = mode
   toggleMediaQuery(mode)
 }
@@ -18,5 +18,5 @@ function toggleMode(mode) {
 function toggleMediaQuery(mode) {
   const mobileStyles = document.getElementById('mobile-css')
 
-  mobileStyles.setAttribute('media', mode == "desktop" ? "(max-width: 482px)" : "all")
+  mobileStyles.setAttribute('media', mode == "desktop" ? "(max-width: 360px)" : "all")
 }

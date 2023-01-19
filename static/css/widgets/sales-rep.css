@@ -39,8 +39,7 @@
   color: #2035E0;
 }
 
-#sales_rep .contact span {
+#sales_rep .contact a {
   font-size: 13px;
-  margin-left: 24px;
 }
 

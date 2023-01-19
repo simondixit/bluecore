@@ -1,0 +1,46 @@
+@import url('./divider.css');
+
+#help .left, #help .right {
+  float: left;
+  width: 292px;
+  padding: 41px 33px;
+  background-color: #F8F8F8;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+#help .left {
+  margin-right: 16px;
+}
+
+#help .title {
+  margin: 0 0 17px 0;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.346667px;
+  text-transform: uppercase;
+  color: #3A3A3A;
+}
+
+#help .text {
+  margin: 0;
+  font-size: 15px;
+  line-height: 15px;
+  color: #181818;
+}
+
+#help .button {
+  display: block;
+  padding: 11px 0;
+  margin-top: 36px;
+  border: 1px solid #171717;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 1.75px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #171717;
+}

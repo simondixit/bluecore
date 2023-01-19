@@ -1,0 +1,76 @@
+<!-- [REQUIRED] IMPORT HTML FROM BASE HTML FILE -->
+{% extends "template-skeleton.html" %}
+
+<!-- VARIABLES -->
+{% set widgetName = "help" %}
+
+<!-- WINDOW TITLE  -->
+{% block title %} {{widgetName.capitalize()}} {% endblock %}
+
+<!-- TEMPLATE HEAD  -->
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/widgets/help.css') }}" />
+{% endblock %}
+
+<!-- TEMPLATE BODY  -->
+{% block content %}
+
+<!-- FOR BLUECORE CODE BLOCK COPY BELOW THIS LINE UNTIL END OF TAG -->
+{# HELP #}
+
+<!-- Widget -->
+
+<div id="help">
+  <!-- Divider -->
+  <div id="divider">
+    <h2>
+      need help?
+    </h2>
+    
+    <div class="divider-container">
+      <div class="divider">
+        <!-- Empty -->
+      </div>
+    </div>
+  </div>
+  <!-- end divider -->
+
+  <!-- desktop mode  -->
+  <div class="left mobile-hide">
+    <h4 class="title">visit the help center</h4>
+    <p class="text">
+      You have questions. We have answers! Right this way for quick access to FAQs, self-service, and our contact information.
+    </p>
+    <a class="button" href="https://www.cityfurniture.com/help-center">go to help center</a>
+  </div>
+
+  <div class="right mobile-hide">
+    <h4 class="title">submit a claim</h4>
+    <p class="text">
+      Send us a few photos and a short explanation of your damages, and we’ll get right to work on solving your issue.
+    </p>
+    <a class="button" href="https://www.cityfurniture.com/account/orders">submit a claim</a>
+  </div>
+
+  <!-- mobile mode  -->
+  <div class="left desktop-hide" style="width: 100%;">
+    <h4 class="title">visit the help center</h4>
+    <p class="text">
+      You have questions. We have answers! Right this way for quick access to FAQs, self-service, and our contact information.
+    </p>
+    <a class="button" href="http://">go to help center</a>
+  </div>
+
+  <div class="right desktop-hide" style="width: 100%; margin-top: 16px;">
+    <h4 class="title">submit a claim</h4>
+    <p class="text">
+      Send us a few photos and a short explanation of your damages, and we’ll get right to work on solving your issue.
+    </p>
+    <a class="button" href="http://">submit a claim</a>
+  </div>
+</div>
+
+<!-- end widget -->
+
+{% endblock %}

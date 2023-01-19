@@ -1,5 +1,5 @@
 <!-- [REQUIRED] IMPORT HTML FROM BASE HTML FILE -->
-{% extends "email-skeleton.html" %}
+{% extends "template-skeleton.html" %}
 
 <!-- VARIABLES -->
 {% set widgetName = "return or damages" %}
@@ -11,7 +11,6 @@
 {% block head %}
     {{ super() }}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/widgets/returns-or-damages.css') }}" />
-    <!-- <link id="mobile-css" media="(max-width: 482px)" rel="stylesheet" href="{{ url_for('static', filename='css/widgets/folder/mobile.css') }}" /> -->
 {% endblock %}
 
 <!-- TEMPLATE BODY  -->

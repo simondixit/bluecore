@@ -1,0 +1,117 @@
+<!-- [REQUIRED] IMPORT HTML FROM BASE HTML FILE -->
+{% extends "template-skeleton.html" %}
+
+<!-- VARIABLES -->
+{% set widgetName = "warranty" %}
+
+<!-- WINDOW TITLE  -->
+{% block title %} {{widgetName.capitalize()}} {% endblock %}
+
+<!-- TEMPLATE HEAD  -->
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/widgets/warranty.css') }}" />
+{% endblock %}
+
+<!-- TEMPLATE BODY  -->
+{% block content %}
+
+<!-- FOR BLUECORE CODE BLOCK COPY BELOW THIS LINE UNTIL END OF TAG -->
+{# WARRANTY #}
+
+<!-- Widget -->
+
+<div id="warranty">
+  <!-- Divider -->
+  <div id="divider">
+    <h2>
+      services & warranties
+    </h2>
+    
+    <div class="divider-container">
+      <div class="divider">
+        <!-- Empty -->
+      </div>
+    </div>
+  </div>
+  <!-- end divider -->
+
+  <!-- desktop mode  -->
+  <div class="mobile-hide">
+    <p class="text">
+      Friendly reminder: You did not choose a product protection plan for your order. But good news, you have 30 days from your delivery or pickup date in case you change your mind. Just give your Sales Associate a call at 954.555.5555 x01234 and we can add the plan of your choice.
+    </p>
+    
+    <div class="box">
+      <img src="https://storage.googleapis.com/img.triggermail.io/city_furniture/icon-1-or-3-year-plan.png" alt="calendar icon">
+      <h4 class="title">1 or 3-Year Plan</h4>
+      <p class="text">
+        Pick the coverage time that works best for you, and we’ll be at your beck and call.
+      </p>
+    </div>
+
+    <div class="box" style="margin: 0 8px 0;">
+      <img src="https://storage.googleapis.com/img.triggermail.io/city_furniture/icon-in-home-repair.png" alt="calendar icon">
+      <h4 class="title">in-home repair</h4>
+      <p class="text">
+        Furniture is heavy! We’ll come to you and make repairs right there on the spot.
+      </p>
+    </div>
+
+    <div class="box">
+      <img src="https://storage.googleapis.com/img.triggermail.io/city_furniture/icon-purchase-protection.png" alt="calendar icon">
+      <h4 class="title">purchase protection</h4>
+      <p class="text">
+        If you never use your plan we’ll refund the cost as a store gift card. You can’t lose!
+      </p>
+    </div>
+
+    <a class="button" href="https://www.cityfurniture.com/furniture-protection-plan">learn more</a>
+  </div>
+
+  <!-- mobile mode  -->
+  <div class="wrapper desktop-hide">
+    <h4 class="title">1 year in-home warranty</h4>
+    <ul>
+      <li class="list-element checked">
+        No inspection fees
+      </li>
+      <li class="list-element checked">
+        No transportation fees
+      </li>
+      <li class="list-element checked">
+        Covers discontinued collections
+      </li>
+      <li class="list-element checked">
+        Unused service refunded as store credit
+      </li>
+      <li class="list-element checked">
+        One year of unlimited service in your home
+      </li>
+      <li class="list-element checked">
+        Quick repairs by our certified repair technicians
+      </li>
+    </ul>
+    <h4 class="title">stain removal</h4>
+    <ul>
+      <li class="list-element checked">
+        Three years of protection
+      </li>
+      <li class="list-element checked">
+        Includes complimentary stain removal kit
+      </li>
+      <li class="list-element checked">
+        Covers stains from food, drinks, kids, pets, ink
+      </li>
+      <li class="list-element checked">
+        Quick service by our certified repair technicians
+      </li>
+    </ul>
+    <a class="button" href="https://www.cityfurniture.com/policy-information#policy-info-warranty">view policy details</a>
+  </div>
+
+</div>
+
+<!-- end widget -->
+
+{% endblock %}

@@ -1,0 +1,57 @@
+@import url('./button.css');
+
+#showcase ul {
+  padding: 0;
+  margin: 0 auto;
+  list-style: none;
+}
+
+#showcase li {
+  float: left;
+  background-color: #F9F9FA;
+  margin: 0 8px 1rem;
+  width: 284px;
+}
+
+#showcase img {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+#showcase .item-name {
+  margin-bottom: 8px;
+  color: #000;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 1.125px;
+  text-transform: uppercase;
+}
+
+#showcase span {
+  text-align: center;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+}
+
+#showcase .discount {
+  color: #CE202F;
+  margin-right: 8px;
+}
+
+#showcase .old-price {
+  text-decoration: line-through;
+}
+
+#showcase a {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #171717;
+  text-decoration: none;
+}

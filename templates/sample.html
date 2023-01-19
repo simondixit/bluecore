@@ -2,9 +2,7 @@
 {% extends "template-skeleton.html" %}
 
 <!-- VARIABLES -->
-{% set widgetName = "order number and date" %}
-{% set ord_number = "767659" %}
-{% set invoice_date = "Mar 03, 2022" %}
+{% set widgetName = "sample" %}
 
 <!-- WINDOW TITLE  -->
 {% block title %} {{widgetName.capitalize()}} {% endblock %}
@@ -12,20 +10,19 @@
 <!-- TEMPLATE HEAD  -->
 {% block head %}
     {{ super() }}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/widgets/order-number-and-date.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/widgets/sample.css') }}" />
 {% endblock %}
 
 <!-- TEMPLATE BODY  -->
 {% block content %}
 
 <!-- FOR BLUECORE CODE BLOCK COPY BELOW THIS LINE UNTIL END OF TAG -->
-{# ORDER NUMBER & ORDER DATE #}
+{# WIDGET NAME #}
 
 <!-- Widget -->
 
-<div id="order_number_and_date">
-  <p class="number">Order Number <b>{{ord_number}}</b></p>
-  <p class="date">Order Date <b>{{invoice_date}}</b></p>  
+<div id="sample">
+    <h1 class="greetings">hello world</h1>
 </div>
 
 <!-- end widget -->

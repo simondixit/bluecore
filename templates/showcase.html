@@ -1,0 +1,78 @@
+<!-- [REQUIRED] IMPORT HTML FROM BASE HTML FILE -->
+{% extends "template-skeleton.html" %}
+
+<!-- VARIABLES -->
+{% set widgetName = "showcase" %}
+{%
+    set del_line = [
+        {
+            "name": "Havana",
+            "price": "$639.96",
+            "discount": "$339.96",
+            "imgUrl": "https://embed.widencdn.net/img/cityfurniture/qsma8afodw/650x440px/E2009721634F00_CE_SLATER_GRY_MC_TP_R_HT.jpeg?keep=c&crop=0&u=m2xgp2",
+        },
+        {
+            "name": "Havana",
+            "price": "$639.96",
+            "discount": "$339.96",
+            "imgUrl": "https://embed.widencdn.net/img/cityfurniture/qsma8afodw/650x440px/E2009721634F00_CE_SLATER_GRY_MC_TP_R_HT.jpeg?keep=c&crop=0&u=m2xgp2",
+        },
+        {
+            "name": "Havana",
+            "price": "$639.96",
+            "discount": "$339.96",
+            "imgUrl": "https://embed.widencdn.net/img/cityfurniture/qsma8afodw/650x440px/E2009721634F00_CE_SLATER_GRY_MC_TP_R_HT.jpeg?keep=c&crop=0&u=m2xgp2",
+        },
+        {
+            "name": "Havana",
+            "price": "$639.96",
+            "discount": "$339.96",
+            "imgUrl": "https://embed.widencdn.net/img/cityfurniture/qsma8afodw/650x440px/E2009721634F00_CE_SLATER_GRY_MC_TP_R_HT.jpeg?keep=c&crop=0&u=m2xgp2",
+        },
+    ]
+%}
+
+<!-- WINDOW TITLE  -->
+{% block title %} {{widgetName.capitalize()}} {% endblock %}
+
+<!-- TEMPLATE HEAD  -->
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/widgets/showcase.css') }}" />
+{% endblock %}
+
+<!-- TEMPLATE BODY  -->
+{% block content %}
+
+<!-- FOR BLUECORE CODE BLOCK COPY BELOW THIS LINE UNTIL END OF TAG -->
+{# WIDGET NAME #}
+
+<!-- Widget -->
+{% if del_line|length() > 0 %}
+
+<div id="showcase">
+    <!-- List  -->
+    <ul>
+        {% for item in del_line %}
+            <li>
+                <img src="{{ item.imgUrl }}" alt="image item">
+                <span class="item-name">havana</span>
+                <p>
+                    {% if item.discount %}
+                        <span class="discount">{{ item.discount }}</span>
+                        <span class="old-price">{{ item.price }}</span>
+                    {% else %}
+                        <span>{{ item.price }}</span>
+                    {% endif %}
+                </p>
+                <a href="#">shop now &#9656;</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endif %}
+
+<!-- end widget -->
+
+{% endblock %}

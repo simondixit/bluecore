@@ -1,0 +1,13 @@
+@import url('./divider.css');
+
+#survey .text {
+  font-size: 16px;
+  line-height: 28px;
+  color: #171717;
+  text-align: left;
+  margin: 0 0 37px;
+}
+
+#survey .cta img {
+  width: 30%;
+}

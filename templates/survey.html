@@ -1,0 +1,61 @@
+<!-- [REQUIRED] IMPORT HTML FROM BASE HTML FILE -->
+{% extends "template-skeleton.html" %}
+
+<!-- VARIABLES -->
+{% set widgetName = "survey" %}
+{% set ord_number = "preprod-602124" %}
+{% set store_number = 6 %}
+{% set pra_store = '26' %}
+
+<!-- WINDOW TITLE  -->
+{% block title %} {{widgetName.capitalize()}} {% endblock %}
+
+<!-- TEMPLATE HEAD  -->
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/widgets/survey.css') }}" />
+{% endblock %}
+
+<!-- TEMPLATE BODY  -->
+{% block content %}
+
+<!-- FOR BLUECORE CODE BLOCK COPY BELOW THIS LINE UNTIL END OF TAG -->
+{# SURVEY #}
+
+<!-- Widget -->
+
+<div id="survey">
+  <!-- Divider -->
+  <div id="divider">
+    <h2>
+      how did we do?
+    </h2>
+    
+    <div class="divider-container">
+      <div class="divider">
+        <!-- Empty -->
+      </div>
+    </div>
+  </div>
+  <!-- end divider -->
+
+  <p class="text">
+    Your delivery experience matters to us. Your feedback helps us continually improve our services.
+  </p>
+  
+  <a class="cta" href="https://www.research.net/r/{% if delivered_store_number == 70 %}93MQYCS{% elif delivered_store_number == 71 %}TNPCP35{% else %}QJK2FZW{% endif %}?oid={{ord_number}}&route={{route}}&aid={{driver}}">
+    <img src="https://storage.googleapis.com/img.triggermail.io/city_furniture/sad-face.png" alt="sad face">
+  </a>
+
+  <a class="cta" href="https://www.research.net/r/{% if delivered_store_number == 70 %}93MQYCS{% elif delivered_store_number == 71 %}TNPCP35{% else %}QJK2FZW{% endif %}?oid={{ord_number}}&route={{route}}&aid={{driver}}">
+    <img src="https://storage.googleapis.com/img.triggermail.io/city_furniture/neutral-face.png" alt="neutral face">
+  </a>
+  
+  <a class="cta" href="https://www.cityfurniture.com?m=postDelivery&s={{store_number}}">
+    <img src="https://storage.googleapis.com/img.triggermail.io/city_furniture/happy-face.png" alt="happy face">
+  </a>
+</div>
+
+<!-- end widget -->
+
+{% endblock %}

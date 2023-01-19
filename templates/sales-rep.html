@@ -1,5 +1,5 @@
 <!-- [REQUIRED] IMPORT HTML FROM BASE HTML FILE -->
-{% extends "email-skeleton.html" %}
+{% extends "template-skeleton.html" %}
 
 <!-- VARIABLES -->
 {% set widgetName = "sales representant" %}
@@ -14,7 +14,6 @@
 {% block head %}
     {{ super() }}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/widgets/sales-rep.css') }}" />
-    <!-- <link id="mobile-css" media="(max-width: 482px)" rel="stylesheet" href="{{ url_for('static', filename='css/widgets/folder/mobile.css') }}" /> -->
 {% endblock %}
 
 <!-- TEMPLATE BODY  -->
@@ -30,8 +29,14 @@
     <div class="wrapper">
         <p class="title">A NOTE FROM {{ sales_name.upper() }}</p>
         <p class="content">Hi there. I’m here to help so feel free to reach out to me with any questions.</p>
-        <p class="contact mobile-hide">{{ sales_phone }} <span>{{ sales_email }}</span></p>
-        <p class="contact desktop-hide">{{ sales_phone }} <span style="display:block;margin:8px 0 0;">{{ sales_email }}</span></p>
+        <p class="contact mobile-hide">
+            <a href="tel:{{ sales_phone }}">{{ sales_phone }}</a>
+            <a href="mailto:{{ sales_email }}" style="margin-left: 24px;">{{ sales_email }}</a>
+        </p>
+        <p class="contact desktop-hide">
+            <a href="tel:{{ sales_phone }}">{{ sales_phone }}</a>
+            <a href="mailto:{{ sales_email }}" style="display:block;margin-top:8px;">{{ sales_email }}</a>
+        </p>
     </div>
 </div>
 
